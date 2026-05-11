@@ -42,7 +42,7 @@ Includes an automated replenishment order proposal generator with priority class
 |---|---|
 | `supply_chain_analysis.py` | Full analysis + replenishment tool |
 | `supply_chain_dashboard.png` | Performance overview dashboard |
-| `replenishment_proposal.png` | Order proposal output |
+| `replenishment_proposal.png` `replenishment_table.png` | Order proposal output |
 | `supply_chain_data.csv` | Source dataset |
 
 ## Author
