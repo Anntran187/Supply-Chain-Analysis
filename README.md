@@ -15,7 +15,7 @@ and a market allocation engine with fill rate tracking.
 - Surface supplier quality issues via defect rate analysis
 
 ## Key Findings
-- **87% of SKUs** fall below reorder point — a systemic under-stocking issue relative to supplier lead times, not isolated cases
+- **87% of SKUs** fall below reorder point, a systemic under-stocking issue relative to supplier lead times, not isolated cases
 - **Skincare** drives the highest revenue ($241K) yet carries 95% stockout risk, top replenishment priority despite strong sales performance
 - **$2.88M** in replenishment value identified; 38 SKUs flagged CRITICAL (stock runs out before next shipment if no action taken)
 - **SIT integration** reduces unnecessary reorder for 11 SKUs, preventing excess stock build across categories
@@ -55,7 +55,7 @@ and a market allocation engine with fill rate tracking.
 |---|---|
 | `supply_chain_analysis.py` | Base analysis + replenishment tool |
 | `sit_allocation_upgrade.py` | SIT integration + multi-market allocation |
-| `supply_chain_dashboard.png` | Performance overview dashboard |
+| `supply_chain_dashboard.png``supply_chain_table.png` | Performance overview dashboard |
 | `replenishment_proposal.png` | Replenishment order proposal output |
 | `sit_allocation_dashboard.png` | SIT & allocation dashboard |
 | `allocation_proposal.csv` | Executable allocation output by market |
