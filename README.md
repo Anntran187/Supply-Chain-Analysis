@@ -12,10 +12,10 @@ Includes an automated replenishment order proposal generator with priority class
 - Surface supplier quality issues via defect rate analysis
 
 ## Key Findings
-- **87% of SKUs** require replenishment - 38 Critical, 26 High, 23 Medium
-- **Skincare** generates the highest revenue ($241K) but has the highest stockout risk (95% of SKUs)
-- **Total replenishment value** needed: $2,888,671 across all categories
-- Reorder logic uses Safety Stock buffer to account for lead time variability
+- **87% of SKUs** fall below reorder point: indicating a systemic under-stocking issue relative to supplier lead times, not isolated cases.
+- **Skincare** drives the highest revenue ($241K) yet carries a 95% stockout risk, the highest across all categories, making it the top replenishment priority despite strong sales performance.
+- **$2.88M** in replenishment orders identified, with 38 SKUs flagged as CRITICAL, meaning stock will run out before the next shipment arrives if no action is taken.
+- Haircare shows the widest gap between stock cover and lead time, suggesting demand is being consistently under-forecasted for this category.
 
 ## Dashboards
 ### Performance Dashboard
