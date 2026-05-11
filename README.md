@@ -45,11 +45,6 @@ Includes an automated replenishment order proposal generator with priority class
 | `replenishment_proposal.png` | Order proposal output |
 | `supply_chain_data.csv` | Source dataset |
 
-## How to Run
-```bash
-pip install pandas matplotlib numpy
-python supply_chain_analysis_v2.py
-```
 ## Author
 Tran Nguyen Phuong Anh  
 [LinkedIn](http://www.linkedin.com/in/anntran187) | tranng.phuonganh027@gmail.com
