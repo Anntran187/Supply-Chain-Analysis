@@ -115,15 +115,19 @@ for bar, val in zip(bars, by_type["total_revenue"]):
 ax2 = fig1.add_subplot(gs1[0, 1])
 x = np.arange(len(by_type))
 w = 0.35
-ax2.bar(x - w/2, by_type["avg_stock_cover"], w, label="Avg Stock Cover (days)",
-        color=color_list, edgecolor="white")
-ax2.bar(x + w/2, by_type["avg_lead_time"], w, label="Avg Lead Time (days)",
-        color=["#B0C4DE", "#F4A07A", "#A8E6A3"], edgecolor="white")
+faded_colors = [c + "88" for c in color_list]  # same hue, 50% alpha via hex
+ax2.bar(x - w/2, by_type["avg_stock_cover"], w, color=color_list, edgecolor="white")
+ax2.bar(x + w/2, by_type["avg_lead_time"],   w, color=color_list, edgecolor="white", alpha=0.35)
 ax2.set_xticks(x)
 ax2.set_xticklabels(by_type["Product type"])
-ax2.set_title("Stock Cover vs Lead Time", fontweight="bold", fontsize=11)
+ax2.set_title("Stock Cover vs Lead Time\n(solid = stock cover, faded = lead time)", fontweight="bold", fontsize=11)
 ax2.set_ylabel("Days")
-ax2.legend(fontsize=8)
+# Manual legend: solid patch = Stock Cover, faded = Lead Time
+legend_patches = [
+    mpatches.Patch(color="#555555", label="Avg Stock Cover (days)"),
+    mpatches.Patch(color="#aaaaaa", alpha=0.5, label="Avg Lead Time (days)"),
+]
+ax2.legend(handles=legend_patches, fontsize=8)
 ax2.set_facecolor("#FFFFFF")
 
 # Chart 3: Stockout Risk %
