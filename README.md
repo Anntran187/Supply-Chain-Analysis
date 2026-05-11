@@ -37,4 +37,4 @@ python supply_chain_analysis.py
 
 ## Author
 Tran Nguyen Phuong Anh  
-[LinkedIn]([https://linkedin.com/in/your-link](http://www.linkedin.com/in/anntran187)) | tranng.phuonganh027@gmail.com
+[LinkedIn](http://www.linkedin.com/in/anntran187) | tranng.phuonganh027@gmail.com
