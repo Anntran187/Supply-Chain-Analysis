@@ -23,6 +23,7 @@ Includes an automated replenishment order proposal generator with priority class
 
 ### Replenishment Order Proposal Tool
 ![Replenishment Proposal](replenishment_proposal.png)
+![Replenishment Table](replenishment_table.png)
 
 ## Replenishment Logic
 | Metric | Formula |
