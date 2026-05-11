@@ -170,13 +170,13 @@ plt.savefig("supply_chain_dashboard.png", dpi=150, bbox_inches="tight",
 print("Dashboard 1 saved.")
 
 # ══════════════════════════════════════════════════════════════════════════
-# FIGURE 2: Replenishment Order Proposal Tool
+# FIGURE 2: Replenishment Order Proposal — 3 Charts
 # ══════════════════════════════════════════════════════════════════════════
-fig2 = plt.figure(figsize=(18, 14))
+fig2 = plt.figure(figsize=(18, 10))
 fig2.patch.set_facecolor("#F8F9FA")
-gs2 = gridspec.GridSpec(3, 2, figure=fig2, hspace=0.55, wspace=0.35)
+gs2 = gridspec.GridSpec(2, 2, figure=fig2, hspace=0.5, wspace=0.35)
 
-# Chart 1: Priority Breakdown (how many SKUs per priority)
+# Chart 1: Priority Breakdown
 ax_p1 = fig2.add_subplot(gs2[0, 0])
 p_order = ["CRITICAL", "HIGH", "MEDIUM", "OK"]
 p_vals = [priority_counts.get(p, 0) for p in p_order]
@@ -208,7 +208,7 @@ for priority in ["CRITICAL", "HIGH", "MEDIUM"]:
     subset = order_proposal[order_proposal["priority"] == priority]
     if len(subset) == 0:
         continue
-    sc = ax_p3.scatter(
+    ax_p3.scatter(
         subset["coverage_gap_days"],
         subset["Revenue generated"],
         s=subset["recommended_order_qty"] * 0.5,
@@ -226,10 +226,15 @@ ax_p3.set_ylabel("Revenue Generated (USD)")
 ax_p3.legend(title="Priority", fontsize=9)
 ax_p3.set_facecolor("#FFFFFF")
 
-# Chart 4: Top 15 CRITICAL/HIGH SKUs — Order Proposal Table
-ax_p4 = fig2.add_subplot(gs2[2, :])
-ax_p4.axis("off")
+fig2.suptitle("Replenishment Order Proposal Tool  |  Personal Care FMCG Supply Chain",
+              fontsize=15, fontweight="bold", y=1.01, color="#2C3E50")
+plt.savefig("replenishment_proposal.png", dpi=150, bbox_inches="tight",
+            facecolor=fig2.get_facecolor())
+print("Dashboard 2 saved.")
 
+# ══════════════════════════════════════════════════════════════════════════
+# FIGURE 3: Replenishment Table (separate file)
+# ══════════════════════════════════════════════════════════════════════════
 top_orders = order_proposal[order_proposal["priority"].isin(["CRITICAL", "HIGH"])].head(15)
 table_data = []
 for _, row in top_orders.iterrows():
@@ -248,15 +253,19 @@ for _, row in top_orders.iterrows():
 col_labels = ["SKU", "Category", "Current Stock", "Stock Cover",
               "Lead Time", "Gap", "Order Qty", "Order Value", "Priority"]
 
-table = ax_p4.table(
+fig3, ax_tbl = plt.subplots(figsize=(16, 8))
+fig3.patch.set_facecolor("#F8F9FA")
+ax_tbl.axis("off")
+
+table = ax_tbl.table(
     cellText=table_data,
     colLabels=col_labels,
     loc="center",
     cellLoc="center"
 )
 table.auto_set_font_size(False)
-table.set_fontsize(8.5)
-table.scale(1, 1.6)
+table.set_fontsize(9.5)
+table.scale(1, 2.0)
 
 # Style header
 for j in range(len(col_labels)):
@@ -269,14 +278,15 @@ for i, (_, row) in enumerate(top_orders.iterrows()):
     for j in range(len(col_labels)):
         table[i + 1, j].set_facecolor(color)
 
-ax_p4.set_title("Replenishment Order Proposal — CRITICAL & HIGH Priority SKUs",
-                fontweight="bold", fontsize=12, pad=20)
+ax_tbl.set_title("Replenishment Order Proposal — CRITICAL & HIGH Priority SKUs",
+                 fontweight="bold", fontsize=13, pad=20)
+fig3.text(0.5, 0.02,
+          "Note: Orders prioritized by coverage gap severity. CRITICAL = stock cover < 15 days below lead time.",
+          ha="center", fontsize=9, color="gray", style="italic")
 
-fig2.suptitle("Replenishment Order Proposal Tool  |  Personal Care FMCG Supply Chain",
-              fontsize=15, fontweight="bold", y=0.98, color="#2C3E50")
-plt.savefig("replenishment_proposal.png", dpi=150, bbox_inches="tight",
-            facecolor=fig2.get_facecolor())
-print("Dashboard 2 saved.")
+plt.savefig("replenishment_table.png", dpi=150, bbox_inches="tight",
+            facecolor=fig3.get_facecolor())
+print("Table saved.")
 
 # ── Console Summary ────────────────────────────────────────────────────────
 print("\n" + "="*60)
