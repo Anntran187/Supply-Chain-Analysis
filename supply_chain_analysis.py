@@ -159,7 +159,7 @@ ax5.set_ylabel("Number of SKUs")
 ax5.legend(fontsize=8)
 ax5.set_facecolor("#FFFFFF")
 
-fig1.suptitle("Supply Chain Performance Dashboard  |  Beauty E-commerce",
+fig1.suptitle("Supply Chain Performance Dashboard  |  Personal Care FMCG",
               fontsize=15, fontweight="bold", y=0.98, color="#2C3E50")
 plt.savefig("supply_chain_dashboard.png", dpi=150, bbox_inches="tight",
             facecolor=fig1.get_facecolor())
@@ -268,7 +268,7 @@ for i, (_, row) in enumerate(top_orders.iterrows()):
 ax_p4.set_title("Replenishment Order Proposal — CRITICAL & HIGH Priority SKUs",
                 fontweight="bold", fontsize=12, pad=20)
 
-fig2.suptitle("Replenishment Order Proposal Tool  |  Beauty E-commerce Supply Chain",
+fig2.suptitle("Replenishment Order Proposal Tool  |  Personal Care FMCG Supply Chain",
               fontsize=15, fontweight="bold", y=0.98, color="#2C3E50")
 plt.savefig("replenishment_proposal.png", dpi=150, bbox_inches="tight",
             facecolor=fig2.get_facecolor())
