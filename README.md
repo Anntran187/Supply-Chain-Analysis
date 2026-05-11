@@ -18,7 +18,9 @@ Includes an automated Net Demand model integrating Stock-in-Transit (SIT), a pri
 - **$2.88M** in replenishment value identified; 38 SKUs flagged CRITICAL (stock runs out before next shipment if no action is taken)
 - **SIT integration** removes reorder need for 15 SKUs, preventing excess stock build across categories
 - **85 SKUs** require replenishment after SIT netting (vs. 87 pre-SIT)
-- **Fill rate by location:** Bangalore 31.7% | Kolkata 29.4% | Mumbai 23.8% | Chennai 20.4% | Delhi 17.9% — low fill rates reflect constrained Order_quantities pool relative to Net Demand
+- **Fill rate by location:** Bangalore 31.7% | Kolkata 29.4% | Mumbai 23.8% | Chennai 20.4% | Delhi 17.9% - low fill rates reflect constrained Order_quantities pool relative to Net Demand
+- **Note on fill rates:** Low fill rates (17–32%) reflect a structural constraint in the dataset: Order_quantities (the available replenishment pool) average ~49 units/SKU while Net Demand averages ~400 units/SKU. 
+> This gap is the core insight: current order volumes are insufficient to cover demand, which is the business problem this analysis is designed to surface and quantify.
 
 ## Dashboards
 ### Performance Dashboard
