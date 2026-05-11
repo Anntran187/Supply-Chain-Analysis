@@ -3,6 +3,8 @@
 ## Overview
 An exploratory analysis of a beauty e-commerce supply chain dataset (100 SKUs across skincare, haircare, and cosmetics categories), focused on identifying replenishment risk, revenue performance, and supplier quality signals.
 
+Includes an automated replenishment order proposal generator with priority classification (Critical/High/Medium) to support data-driven restocking decisions.
+
 ## Objectives
 - Identify SKUs where stock cover falls below supplier lead time (stockout risk)
 - Compare revenue performance across product categories
