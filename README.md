@@ -10,10 +10,10 @@ An exploratory analysis of a beauty e-commerce supply chain dataset (100 SKUs ac
 - Support data-driven prioritization of replenishment actions
 
 ## Key Findings
-- **81% of SKUs** have stock cover below their lead time — indicating systemic under-stocking relative to replenishment cycles
+- **81% of SKUs** have stock cover below their lead time - indicating systemic under-stocking relative to replenishment cycles
 - **Skincare** generates the highest revenue ($241K) but also has the highest stockout risk rate (92.5%)
 - **Haircare** shows the widest gap between stock cover and lead time, suggesting forecasting misalignment
-- Defect rates show no strong correlation with revenue/unit — supplier quality is not being priced in
+- Defect rates show no strong correlation with revenue/unit - supplier quality is not being priced in
 
 ## Dashboard Preview
 ![Supply Chain Dashboard](supply_chain_dashboard.png)
@@ -37,4 +37,4 @@ python supply_chain_analysis.py
 
 ## Author
 Tran Nguyen Phuong Anh  
-[LinkedIn](https://linkedin.com/in/your-link) | tranng.phuonganh027@gmail.com
+[LinkedIn]([https://linkedin.com/in/your-link](http://www.linkedin.com/in/anntran187)) | tranng.phuonganh027@gmail.com
